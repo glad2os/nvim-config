@@ -1,4 +1,5 @@
 require("config.lazy")
 require("config.options")
 require("config.keymaps")
-require("config.lsp")
+require("config.helm_ls")
+require("config.lua_ls")
