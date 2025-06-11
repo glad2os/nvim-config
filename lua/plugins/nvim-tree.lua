@@ -9,14 +9,11 @@ return {
       },
       git = {
         enable = true,
-        ignore = false,  -- показывать файлы, игнорируемые git
+        ignore = false
       },
       filters = {
-        dotfiles = false,  -- показывать скрытые файлы (начинающиеся с .)
-        custom = {},      -- можно добавить свои фильтры при необходимости
-      },
-      renderer = {
-        show_hidden = true,  -- отображать скрытые файлы в дереве
+        dotfiles = false,
+        custom = { "^.git$" },
       },
     }
 
