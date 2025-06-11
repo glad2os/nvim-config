@@ -1,5 +1,7 @@
 # nvim
 
+## Arch Linux:
 
-sudo apt install xclip
-
+```
+$  sudo pacman -S yaml-language-server xclip npm
+```
