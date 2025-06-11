@@ -5,17 +5,21 @@ return {
     require("nvim-tree").setup {
       view = {
         width = 30,
-          side = "left",
-        },
+        side = "left",
+      },
       git = {
         enable = true,
+        ignore = false,  -- показывать файлы, игнорируемые git
       },
       filters = {
-        dotfiles = true,
+        dotfiles = false,  -- показывать скрытые файлы (начинающиеся с .)
+        custom = {},      -- можно добавить свои фильтры при необходимости
+      },
+      renderer = {
+        show_hidden = true,  -- отображать скрытые файлы в дереве
       },
     }
 
-     vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
-   end,
+    vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+  end,
 }
-
