@@ -1,4 +1,3 @@
---- Register Helm LS config
 vim.lsp.config('helm_ls', {
   settings = {
     ["helm-ls"] = {
@@ -15,15 +14,14 @@ vim.lsp.config('helm_ls', {
         showDiagnosticsDirectly = false,
         path = "yaml-language-server",
         config = {
-          schemas = { kubernetes = "templates/**" },
+          schemas = {
+            kubernetes = "templates/**",
+          },
           completion = true,
           hover = true,
         },
       },
     },
   },
-  -- Optional, helps activation:
-  -- root_markers = { 'Chart.yaml', '.git' },
-  -- filetypes = { 'helm', 'yaml' },
 })
 
