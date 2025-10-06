@@ -11,7 +11,9 @@ return {
       "lua",
       "json",
       "markdown",
-      "vim"
+      "vim",
+      "terraform",
+      "hcl"
     },
     highlight = {
       enable = true,
