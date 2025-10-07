@@ -1,19 +1,14 @@
 return {
-  -- LSP config
-  { "neovim/nvim-lspconfig"},
-
-  -- Optional: Easy LSP installer
-  {
-    "williamboman/mason.nvim",
-    config = true,
-  },
   {
     "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup {
-        ensure_installed = { "lua_ls" , "helm_ls" , "yamlls", "tflint", "terraformls" },
-      }
-    end,
+    opts = {
+      ensure_installed = { "lua_ls", "helm_ls", "yamlls", "tflint", "terraformls" },
+    },
+    dependencies = {
+      { "williamboman/mason.nvim", config = true },
+
+      "neovim/nvim-lspconfig",
+    },
   },
 }
 
