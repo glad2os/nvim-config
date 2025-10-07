@@ -4,7 +4,7 @@ return {
   priority = 1000,
   opts = {
     style = "night",
-    transparent = true,
+    transparent = false,
     styles = { sidebars = "transparent", floats = "transparent" },
   },
   config = function(_, opts)
@@ -30,6 +30,6 @@ return {
       group = vim.api.nvim_create_augroup("TokyonightTransparent", { clear = true }),
       callback = make_transparent,
     })
-    make_transparent()
+    -- make_transparent()
   end,
 }
