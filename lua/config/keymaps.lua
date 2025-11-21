@@ -26,3 +26,17 @@ vim.api.nvim_set_keymap("n", "<Leader><Leader>",
 -- telescope buffers
 vim.keymap.set('n', '<leader>tb', builtin.buffers, { desc = 'Telescope buffers' })
 
+-- load the session for the current directory
+vim.keymap.set("n", "<leader>qs", function() require("persistence").load() end)
+
+-- select a session to load
+vim.keymap.set("n", "<leader>qS", function() require("persistence").select() end)
+
+-- load the last session
+vim.keymap.set("n", "<leader>ql", function() require("persistence").load({ last = true }) end)
+
+-- stop Persistence => session won't be saved on exit
+vim.keymap.set("n", "<leader>qd", function() require("persistence").stop() end)
+
+local opts = { noremap=true, silent=true }
+vim.keymap.set("n", "<leader>flua", [[<cmd>lua require("stylua-nvim").format_file()<CR>]], opts)
