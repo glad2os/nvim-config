@@ -1,3 +1,4 @@
+require("config.fix-clipboard")
 require("config.lazy")
 require("config.options")
 require("config.keymaps")
