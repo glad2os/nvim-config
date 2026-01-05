@@ -4,7 +4,7 @@ return {
   build = ":TSUpdate",
   event = { "BufReadPost", "BufNewFile" },
   opts = {
-    ensure_installed = { "bash","dockerfile","helm","yaml","lua","json","markdown","vim","terraform","hcl" },
+    ensure_installed = { "bash","dockerfile","helm","yaml","lua","json","markdown","vim","terraform","hcl", "rust"},
     highlight = { enable = true, additional_vim_regex_highlighting = false },
     indent = { enable = true },
   },
