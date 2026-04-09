@@ -10,3 +10,6 @@ vim.opt.relativenumber = false -- (Optional) turn off relative numbers
 
 vim.opt.clipboard = "unnamedplus"
 
+-- Work around an upstream Neovim 0.12 / tree-sitter-vim highlight query mismatch.
+vim.treesitter.query.set("vim", "highlights", "")
+
