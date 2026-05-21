@@ -30,6 +30,5 @@ return {
       group = vim.api.nvim_create_augroup("TokyonightTransparent", { clear = true }),
       callback = make_transparent,
     })
-    -- make_transparent()
   end,
 }

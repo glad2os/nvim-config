@@ -1,14 +1,31 @@
-vim.opt_local.cursorcolumn = true
-vim.opt.shiftwidth = 2      -- Number of spaces to use for each step of (auto)indent
-vim.opt.tabstop = 2         -- Number of spaces a <Tab> counts for
-vim.opt.expandtab = true    -- Use spaces instead of tabs
+vim.opt.cursorcolumn  = true
+vim.opt.shiftwidth    = 2
+vim.opt.tabstop       = 2
+vim.opt.expandtab     = true
+vim.opt.number        = true
+vim.opt.relativenumber = false
 
+-- Register compound yaml filetypes that nvim-lspconfig expects but no longer provides ftdetect for
+vim.filetype.add({
+  filename = {
+    ["docker-compose.yml"]  = "yaml.docker-compose",
+    ["docker-compose.yaml"] = "yaml.docker-compose",
+    ["compose.yml"]         = "yaml.docker-compose",
+    ["compose.yaml"]        = "yaml.docker-compose",
+    [".gitlab-ci.yml"]      = "yaml.gitlab",
+    [".gitlab-ci.yaml"]     = "yaml.gitlab",
+  },
+  pattern = {
+    [".*/docker%-compose%-.+%.ya?ml"] = "yaml.docker-compose",
+    [".*/values.*%.ya?ml"]            = "yaml.helm-values",
+  },
+})
 
-vim.opt.number = true          -- Show absolute line numbers
-vim.opt.relativenumber = false -- (Optional) turn off relative numbers
-
-
-vim.opt.clipboard = "unnamedplus"
+-- Disable unused providers to silence :checkhealth warnings
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
 
 -- Work around an upstream Neovim 0.12 / tree-sitter-vim highlight query mismatch.
 vim.treesitter.query.set("vim", "highlights", "")

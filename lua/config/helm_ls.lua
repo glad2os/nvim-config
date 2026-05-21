@@ -1,3 +1,5 @@
+vim.lsp.enable('helm_ls')
+
 vim.lsp.config('helm_ls', {
   settings = {
     ["helm-ls"] = {
